@@ -16,16 +16,17 @@ class ViewController: UIViewController, UITableViewDataSource {
         "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県"]
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return prefectureNames.count
+        prefectureNames.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var identifier = ""
-        if indexPath.row % 3 == 0 {
+        let identifier: String
+        switch indexPath.row % 3 {
+        case 0:
             identifier = "Cell1"
-        } else if indexPath.row % 3 == 1 {
+        case 1:
             identifier = "Cell2"
-        } else {
+        default:
             identifier = "Cell3"
         }
 
